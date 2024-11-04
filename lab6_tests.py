@@ -64,15 +64,54 @@ class TestCases(unittest.TestCase):
 
 
     # Part 1
-
-
+    def test_selection_sort_books(self):
+        input1 = [data.Book(["Dorthy"],"Good Book"),data.Book(["Bob"],"Better Book")]
+        result = lab6.selection_sort_books(input1)
+        expected = [data.Book(["Bob"],"Better Book"), data.Book(["Dorthy"],"Good Book"),]
+        self.assertEqual(expected,result)
+    def test_selection_sort_books_2(self):
+        input1 = []
+        result = lab6.selection_sort_books(input1)
+        expected = None
+        self.assertEqual(expected,result)
     # Part 2
-
-
+    def test_swap_case(self):
+        input1 = "aRE THESE CORRECT? idk!"
+        result = lab6.swap_case(input1)
+        expected = "Are these correct? IDK!"
+        self.assertEqual(expected,result)
+    def test_swap_case_2(self):
+        input1 = "δ tEST IF NON ENGL"
+        result = lab6.swap_case(input1)
+        expected = "Δ Test if non engl"
+        self.assertEqual(expected,result)
     # Part 3
-
-
+    def test_str_translate(self):
+        input1 = "Change Characters"
+        input2 = "C"
+        input3 = "Z"
+        result = lab6.str_translate(input1,input2,input3)
+        expected = "Zhange Zharazters"
+        self.assertEqual(expected,result)
+    def test_str_translate_2(self):
+        input1 = "Testing for lots of T's"
+        input2 = "t"
+        input3 = "B"
+        result = lab6.str_translate(input1,input2,input3)
+        expected = "Besbing for lobs of B's"
+        self.assertEqual(expected,result)
     # Part 4
+    def test_histogram(self):
+        input1 = "many of same words that are many of words many"
+        result = lab6.histogram(input1)
+        expected = {"many":3,"of":2,"same":1,"words":2,"that":1,"are":1}
+        self.assertEqual(expected,result)
+    def test_histogram_2(self):
+        input1 = "lots of same words but not lots of lots"
+        result = lab6.histogram(input1)
+        expected = {"lots":3,"of":2,"same":1,"words":1,"but":1,"not":1}
+        self.assertEqual(expected,result)
+
 
 
 
